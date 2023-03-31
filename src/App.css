@@ -125,8 +125,8 @@ p {
   font-family: Poppins;
   position: relative;
   background: url("/6.jpg") 0% 0% / cover no-repeat;
-  padding-top: 300px;
-  padding-bottom: 300px;
+  padding-top: 50vh;
+  padding-bottom: 45vh;
   /* top: -100px; */
 }
 

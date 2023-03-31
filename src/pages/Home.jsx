@@ -1,10 +1,9 @@
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { ThreeDots, FidgetSpinner } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
+import { FidgetSpinner } from "react-loader-spinner";
 import { useEffect, useState } from "react";
-import LoginIcon from "../components/LoginIcon";
 import { useAuth } from "../Context/AuthContext";
 import Card from "../components/Card";
 import Header from "../components/Header";
@@ -14,14 +13,6 @@ const Home = () => {
   const pageSize = 9;
   const [noOfPages, setNoOfPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const {
-    authUser,
-    setAuthUser,
-    isLoggedIn,
-    setIsLoggedIn,
-    userId,
-    setUserId,
-  } = useAuth();
 
   // --------------  for navigation ------------------
   const navigate = useNavigate();
@@ -68,14 +59,14 @@ const Home = () => {
     }
   }
 
+  const addPost = () => {
+    navigate("/add");
+  };
   // ------------------------ pagination -------------
 
   const start = currentPage * pageSize - pageSize;
   const end = start + pageSize;
   let itemsToRender = posts.slice(start, end);
-  const addPost = () => {
-    navigate("/add");
-  };
   function increment() {
     if (currentPage < noOfPages) setCurrentPage(currentPage + 1);
     console.log(currentPage);
@@ -85,9 +76,9 @@ const Home = () => {
     console.log(currentPage);
   }
   return (
-    <>
+    <div>
       <Header />
-      <div className="container m-auto mt-20 mb-20 flex gap-20 justify-center flex-wrap">
+      <div className="container m-auto mt-20 mb-20 flex gap-5 justify-center flex-wrap">
         {posts.length ? (
           itemsToRender.map((post) => (
             <Card
@@ -145,7 +136,7 @@ const Home = () => {
           />
         </svg>
       </button>
-    </>
+    </div>
   );
 };
 
