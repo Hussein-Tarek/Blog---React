@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <div className="navbar bg-black border-b-2 border-orange-400 text-orange-400 flex justify-between ">
       <div className="px-5">
-        <h2 className="font-semibold normal-case text-xl">Sports Blog</h2>
+        <h2 className="font-semibold normal-case text-xl ">Sports Blog</h2>
       </div>
       {authUser ? (
         <div>

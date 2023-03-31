@@ -16,11 +16,11 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
   };
 
   return (
-    <div className="card w-96 min-h-5000px bg-base-100 shadow-xl border-orange-500 ">
+    <div className="card w-[460px] min-h-5000px bg-base-100 shadow-xl border-orange-500 ">
       <figure>
         <img src={post.photo[0].url} alt="img" />
       </figure>
-      <div className="flex gap-3 mt-3 justify-end mr-3 absolute top-64 right-5">
+      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-64 right-5">
         {post.user._id === userId ? (
           <>
             <Edit post={post} getPosts={getPosts} />
