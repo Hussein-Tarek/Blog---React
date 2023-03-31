@@ -99,23 +99,27 @@ const Home = () => {
           ""
         )}
       </div>
-      <div className="btn-group mb-16">
-        <button
-          onClick={decrement}
-          className="btn bg-orange-500 hover:bg-orange-600"
-        >
-          «
-        </button>
-        <button className="btn  bg-orange-400 hover:bg-orange-600">
-          page {currentPage}
-        </button>
-        <button
-          onClick={increment}
-          className="btn  bg-orange-500 hover:bg-orange-600"
-        >
-          »
-        </button>
-      </div>
+      {noOfPages < 9 ? (
+        ""
+      ) : (
+        <div className="btn-group mb-16">
+          <button
+            onClick={decrement}
+            className="btn bg-orange-500 hover:bg-orange-600"
+          >
+            «
+          </button>
+          <button className="btn  bg-orange-400 hover:bg-orange-600">
+            page {currentPage}
+          </button>
+          <button
+            onClick={increment}
+            className="btn  bg-orange-500 hover:bg-orange-600"
+          >
+            »
+          </button>
+        </div>
+      )}
 
       <button
         onClick={addPost}
