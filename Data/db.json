@@ -1,0 +1,200 @@
+{
+  "users": [
+    {
+      "email": "Hussein@mail.com",
+      "password": "$2a$10$A3MJ1h/cuUab0vm7TnTU1uHh2iTaDolJ02q1g73xFZ6SybE4Etx8W",
+      "id": 1
+    },
+    {
+      "email": "Hussein1@mail.com",
+      "password": "$2a$10$33.IIDeSGabSBJ9PNZnU8OOBk9JfLzJ6XBGv13qQ0YmfZNy.Kqh/m",
+      "id": 2
+    },
+    {
+      "email": "Hussein2@mail.com",
+      "password": "$2a$10$7G310pBQ/WDR0bi7YfDpm.9TXCESTg1fpebT07wt2dBjsHweTZN9K",
+      "id": 3
+    },
+    {
+      "email": "new@gmail.com",
+      "password": "$2a$10$uWywZW8wH0fntT/mcY.XHOrKB1VRIZs0cUPv9On1C7zWJOTGhGwsi",
+      "name": "Hussein",
+      "id": 4
+    },
+    {
+      "email": "new2@gmail.com",
+      "password": "$2a$10$9DgrMaVxRIrRj7Vv2VjokON5f3qbyzJbfCFZaSGWwyMaNbAhqJ/lK",
+      "name": "Hussein2",
+      "id": 5
+    },
+    {
+      "email": "new3@gmail.com",
+      "password": "$2a$10$h6qn.1RV0gg8IV/Gs2uYQuiWXDZQ7hvJz/nUV8u5mqZyK90u0Dv9C",
+      "name": "Hussein3",
+      "id": 6
+    },
+    {
+      "email": "new33@gmail.com",
+      "password": "$2a$10$BUUNswW0Eo9gpkIq9Kz5NuHd4hLgEabasNNRSXHT52Ihcsr1gUYLy",
+      "name": "Hussein3",
+      "id": 7
+    },
+    {
+      "email": "new4@gmail.com",
+      "password": "$2a$10$YdFaTgh7J949ZxaH.sai4epLNN51jwi/dS5QJJtC/y4WMH.3DQDkO",
+      "name": "aaa",
+      "id": 8
+    },
+    {
+      "email": "new5@gmail.com",
+      "password": "$2a$10$sghVJecL8mFd4/HG4N5is.EYYM1Pm2QnAGblZvYTrvJM6.DOqa1/S",
+      "name": "abv",
+      "id": 9
+    },
+    {
+      "email": "new6@gmail.com",
+      "password": "$2a$10$I1GY9FuyYW7rPdWNYSBVBOBcJM.BPFU.m5pYH71WkdVNIeLVrfl2y",
+      "name": "aaa",
+      "id": 10
+    },
+    {
+      "email": "new7@gmail.com",
+      "password": "$2a$10$JysM2JKR5g8iNJZC/mc7Yem3i6U1SUg7zhw1njhVsgorKKltDtcee",
+      "name": "abc",
+      "id": 11
+    },
+    {
+      "email": "new8@gmail.com",
+      "password": "$2a$10$.IyGonzz2RXrZl2wlkSt3uTobXxmNfFwAHp6aYeBm0I99J/Kmu3NS",
+      "name": "xzczxc",
+      "id": 12
+    },
+    {
+      "email": "new9@gmail.com",
+      "password": "$2a$10$qFnTRHpM1A60n/cfESK/sOYfXokIQQaSfmc56b7hE0n4.uGkBWKcS",
+      "name": "hussein",
+      "id": 13
+    },
+    {
+      "email": "new05@gmail.com",
+      "password": "$2a$10$d0I2/ICK2IlADUiGMMkIr.pbGt2ZHCrKstUcyD5sOcMxoco9xTqv6",
+      "name": "sada",
+      "id": 14
+    },
+    {
+      "email": "new055@gmail.com",
+      "password": "$2a$10$bKkWwAu2OocLTVzTT21DUuX7sF/BdZlFqDZlztmCVfbTsG.V8OZEq",
+      "name": "sada",
+      "id": 15
+    },
+    {
+      "email": "new555@gmail.com",
+      "password": "$2a$10$rZKM8ulU5RI.llPbobYv.evCTYs4FrhNnnom4bDfxi08P4XLnoU/2",
+      "name": "name",
+      "id": 16
+    },
+    {
+      "email": "mm@gmail.com",
+      "password": "$2a$10$xGnIh/8ztoV5ttQte.sWSu4imNUoQifEy8Lrk5wRvO/TYUDggXgGm",
+      "name": "asd",
+      "id": 17
+    },
+    {
+      "email": "mma@gmail.com",
+      "password": "$2a$10$VzzZ6fgIoo2KtL/ypY1EduyMfW8qk8jjvyMscfU5.na2Os94TcIai",
+      "name": "asd",
+      "id": 18
+    },
+    {
+      "email": "adqaS@gmail.com",
+      "password": "$2a$10$0Rd0TxDIcXWUjO3mUYsAFeSyK9koUjL6fTEfkWtjJsnHA/xOndspi",
+      "name": "sss",
+      "id": 19
+    },
+    {
+      "email": "hhhhh@gmail.com",
+      "password": "$2a$10$qFP6XFXSmBRkN18rHJjHmeK9EfOs5IZ2rl3Wqw9vkBdov/MrVNwNm",
+      "name": "Hussein",
+      "id": 20
+    }
+  ],
+  "posts": [
+    {
+      "title": "First post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 1
+    },
+    {
+      "title": "Second post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 2
+    },
+    {
+      "title": "Third post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 3
+    },
+    {
+      "title": "xx post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 4
+    },
+    {
+      "title": "xx post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 5
+    },
+    {
+      "title": "new post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 6
+    },
+    {
+      "title": "new post",
+      "description": "Hello from post one",
+      "image": "/1.jpg",
+      "id": 7,
+      "user_id": 1
+    },
+    {
+      "title": "title1",
+      "description": "abcsdadasdasdasdasdasdasdasdasdasdasdas",
+      "image": "wordpress-sports-themes-2-2.jpg",
+      "id": 8
+    },
+    {
+      "title": "new title",
+      "description": "abcdefghijklmnopqqqalzfdslfhosfbdsk",
+      "image": "3.jpg",
+      "user": null,
+      "id": 9
+    },
+    {
+      "title": "newwwwwww",
+      "description": "sdjfsdlfkjsadlfjdsl;kfjadslkfjasdkl",
+      "image": "5.jpg",
+      "user": "hussein",
+      "id": 10
+    },
+    {
+      "title": "asdssadas",
+      "description": "asdasdasdasdasdasdasdasd",
+      "image": "2.jpg",
+      "user": "hussein",
+      "id": 11
+    },
+    {
+      "title": "dasdasdasdasdas",
+      "description": "asdas",
+      "image": "1.jpg",
+      "user": null,
+      "id": 12
+    }
+  ]
+}
