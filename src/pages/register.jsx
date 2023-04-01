@@ -69,7 +69,7 @@ const Register = () => {
         <ToastContainer />
         <div className="flex mt-10 m-auto justify-center">
           <form
-            className="w-3/4 lg:w-1/4 md:w-1/2 sm:w-3/4 loginForm"
+            className="w-3/4 lg:w-1/4 md:w-1/2 sm:w-full loginForm"
             onSubmit={handleSubmit(handleSubmitting)}
           >
             <div class="text-center flex flex-col gap-5 w-full ">
