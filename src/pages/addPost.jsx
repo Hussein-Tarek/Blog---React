@@ -73,7 +73,7 @@ const AddPost = () => {
       <div className="add-background">
         <div className="flex mt-10 m-auto justify-center  ">
           <form
-            className="w-3/4 lg:w-1/4 md:w-1/2 sm:w-fullz-1 loginForm"
+            className="w-3/4 lg:w-1/4 md:w-1/2 sm:w-full z-1 loginForm"
             onSubmit={handleSubmit(handleSubmitting)}
           >
             <div class="text-center flex flex-col gap-5 w-full">
