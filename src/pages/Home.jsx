@@ -1,13 +1,10 @@
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { FidgetSpinner } from "react-loader-spinner";
 import { useEffect, useState } from "react";
-import { useAuth } from "../Context/AuthContext";
 import Card from "../components/Card";
 import Header from "../components/Header";
-
+import Pagination from "../components/Pagination";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const pageSize = 9;
@@ -28,18 +25,15 @@ const Home = () => {
         "https://reactjs-blog.onrender.com/v1/post"
       );
       setPosts(data?.data);
-      console.log("posts =>", posts);
     } catch (err) {
-      console.log(err);
       setError(err);
     }
   }
   useEffect(() => {
-    setNoOfPages(Math.ceil(posts.length / pageSize));
+    // setNoOfPages(Math.ceil(posts.length / pageSize));
     getPosts();
   }, []);
-  console.log("posts", posts);
-  console.log("noOfPages", noOfPages);
+
   // --------------------- handlers --------------------
   async function handleDelete(post) {
     setLoading(true);
@@ -67,14 +61,14 @@ const Home = () => {
   const start = currentPage * pageSize - pageSize;
   const end = start + pageSize;
   let itemsToRender = posts.slice(start, end);
-  function increment() {
-    if (currentPage < noOfPages) setCurrentPage(currentPage + 1);
-    console.log(currentPage);
-  }
-  function decrement() {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-    console.log(currentPage);
-  }
+  // function increment() {
+  //   if (currentPage < noOfPages) setCurrentPage(currentPage + 1);
+  //   console.log(currentPage);
+  // }
+  // function decrement() {
+  //   if (currentPage > 1) setCurrentPage(currentPage - 1);
+  //   console.log(currentPage);
+  // }
   return (
     <div>
       <Header />
@@ -99,26 +93,17 @@ const Home = () => {
           ""
         )}
       </div>
-      {noOfPages < 9 ? (
+      {noOfPages > 9 ? (
         ""
       ) : (
-        <div className="btn-group mb-16">
-          <button
-            onClick={decrement}
-            className="btn bg-orange-500 hover:bg-orange-600"
-          >
-            «
-          </button>
-          <button className="btn  bg-orange-400 hover:bg-orange-600">
-            page {currentPage}
-          </button>
-          <button
-            onClick={increment}
-            className="btn  bg-orange-500 hover:bg-orange-600"
-          >
-            »
-          </button>
-        </div>
+        <Pagination
+          posts={posts}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          noOfPages={noOfPages}
+          setNoOfPages={setNoOfPages}
+        />
       )}
 
       <button
@@ -145,13 +130,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// (data)=>{
-//   const fd = new FormData();
-//   data.forEach(item=>fd.append(data.key,data.value))
-//   fd.append('profileImage',profile[0])
-//   images.forEach(img=>{
-//     fd.append('images[]',img)
-//   })
-// }
-// const [posts, setPosts] = useState("");
