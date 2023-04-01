@@ -8,8 +8,6 @@ const Pagination = ({
   noOfPages,
   setNoOfPages,
 }) => {
-  //   const [noOfPages, setNoOfPages] = useState(null);
-  //   const [currentPage, setCurrentPage] = useState(1);
   setNoOfPages(Math.ceil(posts.length / pageSize));
 
   function increment() {
@@ -42,20 +40,3 @@ const Pagination = ({
 };
 
 export default Pagination;
-/*
-<button
-            onClick={decrement}
-            className="btn bg-orange-500 hover:bg-orange-600"
-          >
-            «
-          </button>
-          <button className="btn  bg-orange-400 hover:bg-orange-600">
-            page {currentPage}
-          </button>
-          <button
-            onClick={increment}
-            className="btn  bg-orange-500 hover:bg-orange-600"
-          >
-            »
-          </button>
-*/

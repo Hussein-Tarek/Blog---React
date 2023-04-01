@@ -1,11 +1,13 @@
-import { ThreeDots, FidgetSpinner } from "react-loader-spinner";
-import { useState } from "react";
 import axios from "axios";
+
+import { FidgetSpinner } from "react-loader-spinner";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../Context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+
+import { useAuth } from "../Context/AuthContext";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -49,7 +51,9 @@ const Register = () => {
       setTimeout(() => {
         navigate("/", { replace: true });
       }, 2000);
+
       notify();
+
       setIsLoggedIn(true);
       setAuthUser(response.data.data.user.username);
       setUserId(response.data.data.user._id);
