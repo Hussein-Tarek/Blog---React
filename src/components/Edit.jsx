@@ -1,10 +1,7 @@
 import { FidgetSpinner } from "react-loader-spinner";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
 
 export default function Edit({ post, getPosts }) {
   const [loading, setLoading] = useState(false);
@@ -124,27 +121,14 @@ export default function Edit({ post, getPosts }) {
                     <label htmlFor="image" className="label">
                       <span className="label-text text-white">Image</span>
                     </label>
-                    {/* <input
-                id="image"
-                type="file"
-                placeholder="Type here"
-                accept="image/jpg, image/jpeg , image/png"
-                className="input input-bordered w-full "
-                {...register("image", {
-                  required: "image is required",
-                })}
-              /> */}
                     <input
                       id="image"
                       type="file"
                       name:image
                       className="file-input file-input-warning w-full max-w-xs bg-transparent border-white text-white "
-                      {...register(
-                        "image"
-                        // , {
-                        //   required: "image is required",
-                        // }
-                      )}
+                      {...register("image", {
+                        required: "image is required",
+                      })}
                     />
                   </div>
                   {errors.image && (

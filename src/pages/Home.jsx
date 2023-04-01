@@ -2,22 +2,17 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FidgetSpinner } from "react-loader-spinner";
 import { useEffect, useState } from "react";
+
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Pagination from "../components/Pagination";
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const pageSize = 9;
-  const [noOfPages, setNoOfPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
 
   // --------------  for navigation ------------------
   const navigate = useNavigate();
-  // --------------  get token from local storage  ------------------
-  const token = localStorage.getItem("token");
-
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
 
   async function getPosts() {
     try {
@@ -30,7 +25,6 @@ const Home = () => {
     }
   }
   useEffect(() => {
-    // setNoOfPages(Math.ceil(posts.length / pageSize));
     getPosts();
   }, []);
 
@@ -57,18 +51,13 @@ const Home = () => {
     navigate("/add");
   };
   // ------------------------ pagination -------------
-
+  const pageSize = 6;
+  const [noOfPages, setNoOfPages] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const start = currentPage * pageSize - pageSize;
   const end = start + pageSize;
   let itemsToRender = posts.slice(start, end);
-  // function increment() {
-  //   if (currentPage < noOfPages) setCurrentPage(currentPage + 1);
-  //   console.log(currentPage);
-  // }
-  // function decrement() {
-  //   if (currentPage > 1) setCurrentPage(currentPage - 1);
-  //   console.log(currentPage);
-  // }
+
   return (
     <div>
       <Header />

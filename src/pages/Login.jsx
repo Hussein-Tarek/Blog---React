@@ -1,4 +1,4 @@
-import { ThreeDots, ColorRing, FidgetSpinner } from "react-loader-spinner";
+import { FidgetSpinner } from "react-loader-spinner";
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const {
     authUser,
     setAuthUser,
@@ -16,7 +17,6 @@ const Login = () => {
     userId,
     setUserId,
   } = useAuth();
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -33,7 +33,7 @@ const Login = () => {
   const notify = (msg) => {
     toast(msg);
   };
-  const notifyError = (err) => {
+  const notifyError = () => {
     toast("Invalid Email or password");
   };
   const handleSubmitting = async (data) => {
@@ -58,7 +58,6 @@ const Login = () => {
       setTimeout(() => {
         navigate("/", { replace: true });
       }, 2000);
-      // setIsLoggedIn(true);
       setAuthUser(response.data.data.user.username);
       setUserId(response.data.data.user._id);
       localStorage.setItem("token", response.data.data.access_token);

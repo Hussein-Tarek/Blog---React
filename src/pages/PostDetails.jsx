@@ -1,10 +1,11 @@
 import axios from "axios";
-import Card from "../components/Card";
-import { ThreeDots, FidgetSpinner } from "react-loader-spinner";
 
+import { FidgetSpinner } from "react-loader-spinner";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import CardDetails from "../components/CardDetails";
+
 const PostDetails = () => {
   const [post, setPost] = useState();
   const [error, setError] = useState();
@@ -23,7 +24,6 @@ const PostDetails = () => {
     getPostById();
     console.log("post", post);
   }, []);
-  //   console.log("post", post.title);
   return (
     <>
       <div className="cardDetails mt-10 flex justify-around">

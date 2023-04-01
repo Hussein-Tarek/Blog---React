@@ -4,11 +4,9 @@ import { toast, ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
 
 const AddPost = () => {
   const [loading, setLoading] = useState(false);
-  // const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
   const [authUser, setAuthUser] = useState(null);
   const navigate = useNavigate();
   const {
@@ -116,14 +114,6 @@ const AddPost = () => {
                 <label htmlFor="image" className="label">
                   <span className="label-text text-white">Image</span>
                 </label>
-                {/* <div class="upload">
-                  <input type="file" name="sourcelink" id="cover" />
-                  <p>
-                    {" "}
-                    <span>No file choosen</span>
-                    <i class="fa fa-upload"></i>
-                  </p>
-                </div> */}
                 <input
                   id="image"
                   type="file"
