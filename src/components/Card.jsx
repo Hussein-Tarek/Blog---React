@@ -20,7 +20,7 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
       <figure>
         <img src={post.photo[0].url} alt="img" />
       </figure>
-      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-80 right-5">
+      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-80 right-5 z-10">
         {post.user._id === userId ? (
           <>
             <Edit post={post} getPosts={getPosts} />
