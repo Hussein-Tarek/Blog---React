@@ -1,26 +1,23 @@
-import axios from "axios";
 import { FidgetSpinner } from "react-loader-spinner";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import Edit from "./Edit";
 export default function Card({ post, handleDelete, getPosts, loading }) {
   const { userId, setUserId } = useAuth();
   const navigate = useNavigate();
-  const [userName, setUserName] = useState();
   setUserId(localStorage.getItem("id"));
   // --------------------- handlers -----------------
   const showDetails = (post) => {
     console.log(post._id);
     navigate(`/post/${post._id}`);
   };
-
+  console.log("post", post);
   return (
-    <div className="card w-[460px] min-h-5000px bg-base-100 shadow-xl border-orange-500 ">
+    <div className="card p-2  m-auto lg:m-0 lg:w-[460px] w-[350px] min-h-2000px max-h-572px bg-base-100 shadow-xl border-orange-500 ">
       <figure>
-        <img src={post.photo[0].url} alt="img" />
+        <img className="card-img " src={post.photo[0].url} alt="img" />
       </figure>
-      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-80 right-5 z-10">
+      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-64 right-5 lg:top-80 lg:right-5 z-10">
         {post.user._id === userId ? (
           <>
             <Edit post={post} getPosts={getPosts} />
@@ -72,16 +69,22 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
         )}
       </div>
       <div className="card-body">
-        <div className="avatar mb-2 relative  ">
-          <div className="w-10 rounded-full">
+        <div className="avatar ">
+          <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src="/images.png" />
           </div>
-          <h2 className="mx-2 mt-2 text-xl font-semibold">
+          <h2 className="mx-4 mt-1  text-xl font-semibold">
             {post.user.username}
           </h2>
         </div>
-        <h2 className="text-orange-500 card-title">{post.title}</h2>
-        <p className=" mb-5 text-left">{post.content.substring(0, 100)}...</p>
+        <h2 className="text-orange-500 card-title">
+          {post.title.substring(0, 35)}
+          {post.title.length > 35 ? "..." : ""}
+        </h2>
+        <p className=" mb-5 text-left">
+          {post.content.substring(0, 100)}
+          {post.content.length > 100 ? "..." : ""}
+        </p>
         <div classNae="card-actions justify-end">
           <button
             onClick={() => {
@@ -96,60 +99,3 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
     </div>
   );
 }
-
-{
-  /* <div className="card w-96 glass">
-  <figure>
-    <img src={photo[0].url} alt="car!" />
-  </figure>
-  <div className="card-body flex flex-wrap">
-    <div className="avatar">
-      <div className="w-5 rounded-full">
-        <svg
-          className="w-[20px] text-red"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-        >
-          <path d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z" />
-        </svg>
-      </div>
-      <h2 className="mx-2 mt-1 text-orange-500">
-        {localStorage.getItem("userName")}
-      </h2>
-    </div>
-    <h2 className="card-title">{title}</h2>
-      <h3>{content}...</h3>
-    </div>
-    <div>
-  </div>
-</div>; */
-}
-/*
-<div className="h-96 rounded-box flex items-center m-5">
-      <div className="h-96 rounded-box flex  justify-around m-5">
-        <div className=" rounded-box flex justify-center m-5 w-[1500px]">
-          <div className="card w-25 bg-base-100 shadow-xl flex flex-row justify-center m-5 ">
-            <div className="basis-1/2 ">
-              <figure className="h-full">
-                <img className="h-fit" src={photo[0].url} alt="Shoes" />
-              </figure>
-            </div>
-            <div className="basis-1/2 h-96">
-              <div className="card-body w-96">
-                <div className="avatar">
-                  <div className="w-10 rounded-full">
-                    <img src="/1.jpg" />
-                  </div>
-                  <h2 className="mx-2 mt-2 text-xl">
-                    {localStorage.getItem("userName")}
-                  </h2>
-                </div>
-                <h2 className="card-title">{title}</h2>
-                <p className="text-left">{content}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
