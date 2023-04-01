@@ -184,3 +184,22 @@ div .upload p {
   border: 1px solid #dc864e;
   border-radius: 3px;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+  .header {
+    padding-top: 2vh;
+    padding-bottom: 25vh;
+  }
+  .logo {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (max-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (max-width: 1200px) {
+}
