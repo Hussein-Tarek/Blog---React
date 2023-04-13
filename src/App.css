@@ -1,9 +1,9 @@
 #root {
-  /* max-width: 1280px; */
   margin: 0 auto;
-  /* padding: 2rem; */
   text-align: center;
+  overflow-x: hidden;
 }
+
 .card {
   width: 50%;
 }
@@ -14,6 +14,7 @@
   margin-bottom: 7px;
   margin-top: 10px;
   transition: 0.1s ease-in;
+  /* border-radius: 80px; */
 }
 .card-img:hover {
   width: 100%;
@@ -21,17 +22,14 @@
 }
 
 .login-background {
-  /* z-index: 0; */
   font-family: Poppins;
   position: relative;
   background: url("/6.jpg") 0% 0% / cover no-repeat;
   padding-top: 45px;
   padding-bottom: 200px;
-  /* top: -100px; */
 }
 
 .login-background:before {
-  /* z-index: 0; */
   content: "";
   position: absolute;
   background-color: #000000;
@@ -42,14 +40,13 @@
   opacity: 0.7;
 }
 
-.loginForm {
+/* .loginForm {
   z-index: 1;
   background-color: rgba(86, 86, 86, 0.324);
   padding: 40px;
   border-radius: 20px;
   border: 1px white solid;
-}
-/* #FFA800 */
+} */
 p,
 h2 {
   overflow-wrap: break-word;
@@ -82,8 +79,8 @@ h2 {
   position: relative;
   background: url("/6.jpg") 0% 0% / cover no-repeat;
   max-height: auto;
-  padding-top: 11vh;
-  padding-bottom: 10vh;
+  padding-top: 25vh;
+  padding-bottom: 24.5vh;
 }
 
 .add-background:before {
@@ -101,10 +98,13 @@ h2 {
   /* z-index: 0; */
   font-family: Poppins;
   position: relative;
-  background: url("/6.jpg") 0% 0% / cover no-repeat;
+  right: 5px;
+  background: url("/8.jpg") 0% 0% / cover no-repeat;
   padding-top: 50vh;
-  padding-bottom: 45vh;
+  padding-bottom: 51vh;
+  width: 102vw;
   /* top: -100px; */
+  filter: blur(1px);
 }
 
 .header:before {
@@ -117,13 +117,32 @@ h2 {
   left: 0;
   opacity: 0.7;
 }
+.bg-text {
+  /* background-color: rgb(0, 0, 0); */
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  color: white;
+  font-weight: bold;
+  /* border: 3px solid #f1f1f1; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.mainText {
+  font-family: "Cursive";
+}
 
 div .upload {
+  top: -10px;
   width: 100%;
   position: relative;
   height: 40px;
   outline: none;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 div .upload input {
@@ -138,7 +157,7 @@ div .upload input {
   opacity: 0;
   color: #592a20;
   padding: 0px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
   color: #dc864e;
 }
@@ -146,11 +165,11 @@ div .upload input {
 div .upload p {
   position: absolute;
   z-index: 1;
-  background: #faf5f1;
-  top: 0;
+  /* background: #fff; */
+  top: -20px;
   height: 100%;
   left: 0;
-  padding: 10px;
+  padding: 22px 10px;
   width: 100%;
   text-align: center;
   display: flex;
@@ -158,8 +177,18 @@ div .upload p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #dc864e;
-  border-radius: 3px;
+  border: 1px solid #f97316;
+  border-radius: 7px;
+}
+div .upload p.add {
+  border: 1px solid #ffffff;
+}
+
+div .upload p img {
+  max-width: 100%;
+  height: 40px;
+  margin-right: -5px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -168,21 +197,35 @@ div .upload p {
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media (max-width: 768px) {
   .header {
     padding-top: 35vh;
     padding-bottom: 35vh;
   }
-  /* .logo {
-    display: none;
-  } */
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media (max-width: 992px) {
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (max-width: 1200px) {
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(255, 128, 0), rgb(254, 218, 163));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgb(255, 106, 0), rgb(254, 218, 163));
 }

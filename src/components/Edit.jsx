@@ -27,7 +27,7 @@ export default function Edit({ post, getPosts }) {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", description);
-    if (data?.image) formData.append("photo", data?.image[0]);
+    if (data.image.length) formData.append("photo", data?.image[0]);
 
     const token = localStorage.getItem("token");
     const config = {
@@ -85,7 +85,7 @@ export default function Edit({ post, getPosts }) {
                       type="text"
                       placeholder="Title"
                       name:title
-                      className="input input-bordered w-full bg-transparent border-white text-white "
+                      className="input input-bordered w-full bg-transparent border-orange-400 text-gray-900 "
                       {...register("title", {
                         required: "Title is required",
                       })}
@@ -105,7 +105,7 @@ export default function Edit({ post, getPosts }) {
                       type="text"
                       placeholder="Description"
                       name:description
-                      className="input input-bordered textarea-md w-full bg-transparent border-white text-white  "
+                      className="input input-bordered textarea-md w-full bg-transparent border-orange-400 text-gray-900  "
                       {...register("description", {
                         required: "Description is required",
                       })}
@@ -125,16 +125,19 @@ export default function Edit({ post, getPosts }) {
                       id="image"
                       type="file"
                       name:image
-                      className="file-input file-input-warning w-full max-w-xs bg-transparent border-white text-white "
+                      className="file-input file-input-warning w-full max-w-xs bg-transparent border-orange-400 text-gray-900"
                       {...register("image", {
-                        required: "image is required",
+                        // required: "image is required",
                       })}
                     />
                   </div>
                   {errors.image && (
                     <p style={{ color: "red" }}>{errors.image?.message}</p>
                   )}
-                  <button className="btn bg-orange-500 " type="submit">
+                  <button
+                    className="btn bg-orange-500 border-0 hover:bg-orange-600 "
+                    type="submit"
+                  >
                     Edit
                   </button>
                 </div>
@@ -146,7 +149,10 @@ export default function Edit({ post, getPosts }) {
               </div>
             ) : (
               <div className="modal-action">
-                <label htmlFor={`my-modal_${post._id}`} className="btn">
+                <label
+                  htmlFor={`my-modal_${post._id}`}
+                  className="btn bg-orange-500 border-0 hover:bg-orange-600 "
+                >
                   Close
                 </label>
               </div>

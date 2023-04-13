@@ -15,12 +15,13 @@ import PostDetails from "./pages/PostDetails";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ProtectedRoutes from "./Utils/ProtectedRoutes";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <>
       <BrowserRouter>
         <AuthProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
@@ -29,9 +30,10 @@ function App() {
               <Route path="/add" element={<AddPost />}></Route>
             </Route>
             <Route path="/post/:id" element={<PostDetails />}></Route>
+            <Route path="/profile/:id" element={<Profile />}></Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </AuthProvider>
       </BrowserRouter>
     </>

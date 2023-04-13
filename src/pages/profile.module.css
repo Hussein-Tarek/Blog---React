@@ -1,0 +1,136 @@
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+.side {
+  /* overflow: hidden; */
+  /* border-right: 10px solid orange; */
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, orange, rgb(255, 111, 0)) 1;
+  border-bottom: none;
+}
+/* .header {
+  font-family: Poppins;
+  position: relative;
+  right: 5px;
+  background: url("/tennis.jpg") 0% 0% / cover no-repeat;
+  padding-top: 10vh;
+  padding-bottom: 30vh;
+  width: 102vw;
+  filter: blur(1px);
+}
+.header::before {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+} */
+
+/* .content {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+} */
+.content {
+  padding-top: 30px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  gap: 20px;
+}
+.header {
+  padding-top: 30px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.info {
+  width: 100%;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 1fr;
+  /* grid-column-gap: 30px; */
+  /* justify-content: end; */
+}
+/* .info .profileImg{
+
+} */
+
+.profileImg {
+  height: 170px;
+  width: 170px;
+  border-radius: 100%;
+  /* background: url("/profile.jfif") 0% 0% / cover no-repeat; */
+  position: relative;
+  top: -15vh;
+  left: 7vw;
+  border: 3px solid rgb(254, 193, 62);
+}
+.about {
+  margin: auto;
+  /* border: 3px solid white; */
+  width: 90%;
+  border-radius: 20px;
+}
+.about p {
+  color: white;
+}
+.profileImg img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 100%;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* margin-left: 25vw; */
+  margin-top: 40px;
+  /* width: 75vw; */
+  z-index: 0;
+}
+
+.side ul.bar {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  left: 25%;
+  gap: 15px;
+}
+
+.side ul.bar li {
+  background-color: orange;
+  height: 100px;
+  width: 30px;
+  margin: 0;
+  /* transform: rotate(10deg); */
+  /* transform: skew(-15deg); */
+}
+
+ul.bar li:first-of-type {
+  opacity: 0.4;
+}
+
+ul.bar li:nth-of-type(2) {
+  opacity: 0.6;
+}
+ul.bar li:nth-of-type(3) {
+  opacity: 0.8;
+}
