@@ -1,0 +1,236 @@
+.sign .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: auto;
+  gap: 70px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+@media (max-width: 768px) {
+  .sign .container {
+    grid-template-columns: 1fr;
+  }
+  .signImg {
+    display: none;
+  }
+  .loginImg {
+    display: none;
+  }
+  .sign .container .signForm {
+    padding: 20px 20px;
+  }
+  .signLogo .slogan {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 992px) {
+  .sign .container {
+    grid-template-columns: 1fr;
+  }
+  .signImg {
+    display: none;
+  }
+  .loginImg {
+    display: none;
+  }
+  .signLogo .slogan {
+    font-size: large;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sign .container .signForm {
+    width: 98%;
+  }
+  .signLogo .slogan {
+    font-size: larger;
+  }
+}
+
+.sign .container {
+  margin: auto;
+}
+.sign .container .signForm {
+  padding: 20px 20px;
+  text-align: left;
+}
+
+.signForm p {
+  color: #b2b2b2;
+  margin: 20px auto;
+}
+
+.signForm form input {
+  border: 0.5px solid #f97316;
+}
+
+.formControl label span {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #6a6a6a;
+}
+
+button[type="submit"] {
+  transition: all 0.5s linear;
+}
+
+.signImg {
+  position: fixed;
+  /* display: flex; */
+  /* position: relative; */
+  right: 0;
+  top: 0px;
+  bottom: 0;
+  margin: auto;
+  background: #f97316 url("./basketball-g3b0770739_640.jpg") no-repeat;
+  background-size: cover;
+  background-position: -80px 0px;
+  /* filter */
+  width: 550px;
+  height: 120%;
+  transform: rotate(13deg);
+  z-index: -1;
+}
+
+.signImg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 100%;
+  width: 40px;
+  background-color: #f974169a;
+}
+.loginImg {
+  position: fixed;
+  /* display: flex; */
+  /* position: relative; */
+  right: 0;
+  top: 0px;
+  bottom: 0;
+  margin: auto;
+  background: #f97316 url("./football-gc04541c84_1280.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0px 0px;
+  /* filter */
+  width: 550px;
+  height: 120%;
+  transform: rotate(13deg);
+  z-index: -1;
+}
+
+.loginImg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 100%;
+  width: 40px;
+  background-color: #f974169a;
+}
+
+ul.bar {
+  display: flex;
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  list-style: none;
+  /* width: 50%; */
+  gap: 20px;
+  transform: rotate(-13deg) skew(-15deg);
+}
+
+ul.bar li {
+  width: 30px;
+  height: 100px;
+  background-color: #f97316;
+}
+
+.signImg::before {
+  content: "";
+  position: absolute;
+  background-color: #0000006a;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+.loginImg::before {
+  content: "";
+  position: absolute;
+  background-color: #0000006a;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+.signLogo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 30px auto;
+  margin-left: 14px;
+  /* margin-top: 0px; */
+}
+.signLogo h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #343333;
+}
+
+.container ul.bars {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  top: -25px;
+  left: 10%;
+  gap: 15px;
+}
+
+.container ul.bars li {
+  background-color: orange;
+  height: 50px;
+  width: 30px;
+  margin: 0;
+  /* transform: rotate(10deg); */
+  transform: skew(-15deg);
+}
+
+ul.bar li:first-of-type {
+  opacity: 0.5;
+  margin-bottom: -30px;
+  height: 130px;
+}
+
+ul.bar li:nth-of-type(2) {
+  opacity: 0.75;
+  height: 120px;
+  margin-bottom: -20px;
+}
+ul.bar li:nth-of-type(3) {
+  opacity: 0.9;
+}
+
+ul.bars li:first-of-type {
+  opacity: 0.5;
+  margin-bottom: -30px;
+}
+
+ul.bars li:nth-of-type(2) {
+  opacity: 0.75;
+  margin-bottom: -20px;
+}
+ul.bars li:nth-of-type(3) {
+  opacity: 0.9;
+}

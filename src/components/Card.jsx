@@ -1,23 +1,44 @@
 import { FidgetSpinner } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import Edit from "./Edit";
+
 export default function Card({ post, handleDelete, getPosts, loading }) {
   const { userId, setUserId } = useAuth();
   const navigate = useNavigate();
   setUserId(localStorage.getItem("id"));
   // --------------------- handlers -----------------
   const showDetails = (post) => {
-    console.log(post._id);
     navigate(`/post/${post._id}`);
   };
-  console.log("post", post);
   return (
-    <div className="card p-2  m-auto lg:m-0 lg:w-[460px] w-[350px] min-h-2000px max-h-572px bg-base-100 shadow-xl border-orange-500 ">
+    <div className="card p-2 text-center m-auto lg:m-0 lg:w-[460px] w-[350px] min-h-2000px max-h-572px bg-base-100 shadow-xl border-orange-500 ">
+      <div className="flex gap-4 ml-4 mt-2">
+        <div className="avatar ">
+          <div className="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img
+              src={post.user.photo[0] ? post.user.photo[0].url : "/images.png"}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-start justify-start">
+          <Link to={`/profile/${post.user._id}`}>
+            <h2 className=" mt-1  text-xl font-semibold text-gray-700">
+              {post.user.username}
+            </h2>
+          </Link>
+          <p className="text-gray-400 text-xs">
+            {new Date(post.updatedAt).toLocaleString()}
+          </p>
+        </div>
+      </div>
+      <h2 className="text-orange-500 card-title min-h-[70px] mt-2 pt-2 m-auto">
+        {post.title}
+      </h2>
       <figure>
         <img className="card-img " src={post.photo[0].url} alt="img" />
       </figure>
-      <div className="flex gap-1 mt-3 justify-end mr-1 absolute top-64 right-5 lg:top-80 lg:right-5 z-10">
+      <div className="flex gap-1 mt-3 justify-end mr-1 absolute  right-5  lg:right-5 z-10">
         {post.user._id === userId ? (
           <>
             <Edit post={post} getPosts={getPosts} />
@@ -39,7 +60,7 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
               className="modal-toggle"
             />
             <div className="modal">
-              <div className="modal-box relative">
+              <div className="modal-box relative m-auto">
                 <label
                   htmlFor={`my-modal-3_${post._id}`}
                   className="btn btn-sm btn-circle absolute right-2 top-2 border-none"
@@ -49,12 +70,13 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
                 <h3 className="text-lg font-bold">Are you sure?..</h3>
                 <p className="py-4">This post will be deleted permanently.</p>
                 {loading ? (
-                  <FidgetSpinner />
+                  <div className=" ml-32 sm:ml:48 md:ml-48">
+                    <FidgetSpinner />
+                  </div>
                 ) : (
                   <button
                     className="btn bg-orange-500 border-none"
                     onClick={() => {
-                      console.log("delete clicked");
                       handleDelete(post);
                     }}
                   >
@@ -68,24 +90,26 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
           ""
         )}
       </div>
-      <div className="card-body">
-        <div className="avatar ">
-          <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="/images.png" />
-          </div>
-          <h2 className="mx-4 mt-1  text-xl font-semibold">
-            {post.user.username}
-          </h2>
-        </div>
-        <h2 className="text-orange-500 card-title">
-          {post.title.substring(0, 35)}
-          {post.title.length > 35 ? "..." : ""}
-        </h2>
-        <p className=" mb-5 text-left">
-          {post.content.substring(0, 100)}
-          {post.content.length > 100 ? "..." : ""}
-        </p>
-        <div classNae="card-actions justify-end">
+      <div className="card-body p-2 ">
+        {/* <p className=" mb-5 text-left"> */}
+        {/* {post.content.substring(0, 100)}
+          {post.content.length > 100 ? "..." : ""} */}
+        {post.content.length > 200 ? (
+          <button
+            onClick={() => {
+              showDetails(post);
+            }}
+          >
+            <p className=" mb-5 text-justify">
+              {post.content.substring(0, 200)}
+              <span className="text-orange-500 font-bold"> Read More....</span>
+            </p>
+          </button>
+        ) : (
+          <p className=" mb-5  text-justify ">{post.content}</p>
+        )}
+        {/* </p> */}
+        {/* <div classNae="card-actions justify-end">
           <button
             onClick={() => {
               showDetails(post);
@@ -94,7 +118,7 @@ export default function Card({ post, handleDelete, getPosts, loading }) {
           >
             Read more
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

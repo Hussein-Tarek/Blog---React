@@ -4,6 +4,7 @@ import { FidgetSpinner } from "react-loader-spinner";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import Navbar from "../components/Navbar";
 import CardDetails from "../components/CardDetails";
 
 const PostDetails = () => {
@@ -26,9 +27,11 @@ const PostDetails = () => {
   }, []);
   return (
     <>
-      <div className="cardDetails mt-10 flex justify-around">
+      <Navbar />
+      <div className="cardDetails mt-28 flex justify-around">
         {post ? (
           <CardDetails
+            post={post}
             title={post.title}
             content={post.content}
             photo={post.photo}

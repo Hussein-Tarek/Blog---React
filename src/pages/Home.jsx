@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Pagination from "../components/Pagination";
+import Navbar from "../components/Navbar";
+import AddPost from "../components/AddPost";
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
@@ -27,7 +29,7 @@ const Home = () => {
   useEffect(() => {
     getPosts();
   }, []);
-
+  console.log("posts", posts);
   // --------------------- handlers --------------------
   async function handleDelete(post) {
     setLoading(true);
@@ -47,11 +49,8 @@ const Home = () => {
     }
   }
 
-  const addPost = () => {
-    navigate("/add");
-  };
   // ------------------------ pagination -------------
-  const pageSize = 6;
+  const pageSize = 12;
   const [noOfPages, setNoOfPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const start = currentPage * pageSize - pageSize;
@@ -60,6 +59,8 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
+
       <Header />
       <div className="container m-auto mt-20 mb-20 flex gap-5 justify-center flex-wrap">
         {posts.length ? (
@@ -79,7 +80,10 @@ const Home = () => {
             </div>
           </>
         ) : (
-          ""
+          <div className="flex flex-col gap-5">
+            <p>Something went wrong...</p>
+            <p>Check your internet!</p>
+          </div>
         )}
       </div>
       {noOfPages > 9 ? (
@@ -94,26 +98,7 @@ const Home = () => {
           setNoOfPages={setNoOfPages}
         />
       )}
-
-      <button
-        onClick={addPost}
-        className="btn btn-circle items-center bg-orange-500 fixed right-0 bottom-0 m-6 border-none"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 4.5v15m7.5-7.5h-15"
-          />
-        </svg>
-      </button>
+      <AddPost />
     </div>
   );
 };
