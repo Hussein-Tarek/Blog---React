@@ -10,8 +10,6 @@ export default function EditProfile({ user, getUser }) {
   console.log("User name ", user.username);
   const preloadedValues = {
     name: userName,
-    // photo: user.photo[0]?.url,
-    // cover_photo: user.cover_photo[0]?.url,
   };
   const {
     register,
