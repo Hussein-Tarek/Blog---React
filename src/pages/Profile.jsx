@@ -98,7 +98,9 @@ const Profile = () => {
         </div>
       </div>
       <div className={`${styles.container}  text-black relative z-10 `}>
-        <div className={`${styles.side}  sticky bg-black text-white w-96`}>
+        <div
+          className={`${styles.side} lg:block lg:sticky hidden  bg-black text-white w-96`}
+        >
           <div className={`${styles.profileImg}`}>
             <img
               src={data.photo?.length > 0 ? data.photo[0].url : "/images.png"}
@@ -147,7 +149,7 @@ const Profile = () => {
         {posts.length ? (
           <div className={`${styles.main} my-10 m-auto -z-10`}>
             {posts.map((post) => (
-              <div className="card p-2 text-center m-auto lg:m-0  w-[350px] lg:w-[500px] lg:h-[550px]  max-h-572px bg-base-100 shadow-xl border-orange-500  ">
+              <div className="card p-2 text-center m-auto lg:m-0  w-[300px] lg:w-[500px] lg:h-[550px]  max-h-572px bg-base-100 shadow-xl border-orange-500  ">
                 <div className="flex gap-4 ml-4 mt-2">
                   <div className="avatar ">
                     <div className="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -281,7 +283,9 @@ const Profile = () => {
           </>
         )}
       </div>
+      {/* <div className="mt-10 ml-10 lg:mt-0"> */}
       <AddPost />
+      {/* </div> */}
     </>
   );
 };

@@ -9,7 +9,7 @@ const AddPost = () => {
   return (
     <button
       onClick={addPost}
-      className="btn btn-circle items-center bg-orange-500 hover:bg-orange-600 fixed right-0 bottom-0 m-6 border-none"
+      className="btn btn-circle items-center bg-orange-500 hover:bg-orange-600 fixed -right-5 lg:right-0 bottom-0 m-6 border-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
