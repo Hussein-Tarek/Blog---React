@@ -81,17 +81,15 @@ button[type="submit"] {
 
 .signImg {
   position: fixed;
-  /* display: flex; */
-  /* position: relative; */
   right: 0;
   top: 0px;
   bottom: 0;
   margin: auto;
-  background: #f97316 url("./basketball-g3b0770739_640.jpg") no-repeat;
+  background: #f97316 url("https://i.ibb.co/Czf8946/d21944d0d580.webp")
+    no-repeat;
   background-size: cover;
-  background-position: -80px 0px;
-  /* filter */
-  width: 550px;
+  background-position: -500px 0px;
+  width: 500px;
   height: 120%;
   transform: rotate(13deg);
   z-index: -1;
@@ -109,17 +107,15 @@ button[type="submit"] {
 }
 .loginImg {
   position: fixed;
-  /* display: flex; */
-  /* position: relative; */
   right: 0;
   top: 0px;
   bottom: 0;
   margin: auto;
-  background: #f97316 url("./football-gc04541c84_1280.jpg") no-repeat;
+  background: #f97316 url("https://i.ibb.co/2YFKwCT/53c5d9c89ca7.webp")
+    no-repeat;
   background-size: cover;
-  background-position: 0px 0px;
-  /* filter */
-  width: 550px;
+  background-position: -500px 0px;
+  width: 500px;
   height: 120%;
   transform: rotate(13deg);
   z-index: -1;
@@ -142,7 +138,6 @@ ul.bar {
   bottom: 100px;
   right: 20px;
   list-style: none;
-  /* width: 50%; */
   gap: 20px;
   transform: rotate(-13deg) skew(-15deg);
 }
