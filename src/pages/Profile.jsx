@@ -8,7 +8,7 @@ import Edit from "../components/Edit";
 import styles from "./profile.module.css";
 import AddPost from "../components/AddPost";
 import EditProfile from "../components/EditProfile";
-
+import Footer from "../components/Footer";
 const Profile = () => {
   const navigate = useNavigate();
   const userId = localStorage.getItem("id");
@@ -285,6 +285,7 @@ const Profile = () => {
       </div>
       {/* <div className="mt-10 ml-10 lg:mt-0"> */}
       <AddPost />
+      <Footer />
       {/* </div> */}
     </>
   );

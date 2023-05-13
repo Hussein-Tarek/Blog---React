@@ -6,19 +6,31 @@
 
 .card {
   width: 50%;
+  overflow: hidden;
 }
+
+/* .card-img {
+  width: 98%;
+  overflow: hidden;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  transition: 0.1s ease-in;
+}
+.card-img:hover {
+  width: 100%;
+  margin-bottom: 0px;
+} */
 
 .card-img {
   width: 98%;
   overflow: hidden;
   margin-bottom: 7px;
   margin-top: 10px;
-  transition: 0.1s ease-in;
-  /* border-radius: 80px; */
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 .card-img:hover {
-  width: 100%;
-  margin-bottom: 0px;
+  transform: scale(1.1);
 }
 
 .login-background {
